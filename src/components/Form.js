@@ -24,17 +24,12 @@ function Form({closeForm}) {
 
     }
 
-//   if (!open) return null
-//   return ReactDom.createPortal(
     return(
         <div className='formBackground'>
             <div className='form'>
-                {/* <button onClick={onClose}>Close Modal</button> */}
-                {/* <button onClick={()=> closeForm(false)}>X</button> */}
                 <div className='progressbar'></div>
                 <div className='form-container'>
                     <div className='header'>
-                        {/* <h1>{FormTitles[page]}</h1> */}
                     </div>
                     <div className='body'>
                         {PageDisplay()}
