@@ -31,6 +31,7 @@ function Welcome({ setPage, formData, setFormData }) {
           className="button"
           disabled={!formData.name}
           onClick={() => {
+            // console.log("clicked")
             setPage((currPage) => currPage + 1);
           }}
         >

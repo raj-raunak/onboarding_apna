@@ -10,6 +10,15 @@ function Hiring({ setPage, formData, setFormData }) {
     setStatus(status);
   };
 
+// function json_data({formData}){
+//   var fileName = 'myData.json';
+//   var fileToSave = new Blob([JSON.stringify(formData)], {
+//     type: 'application/json'
+//   });
+//   // saveAs(fileToSave, fileName);
+//   JSON.stringify(FormData,undefined,2)
+// }
+
   return (
     <div className="hire">
       <img
@@ -33,18 +42,19 @@ function Hiring({ setPage, formData, setFormData }) {
             value="own_company"
             id="option-1"
             checked={status == 1}
-            onClick={(e) => radioHandler(1)}
+            onChange={(e) => radioHandler(1)}
           />
-          <label for="option-1">
+          <label htmlFor="option-1" onClick={(e) => radioHandler(1)}>
             <div className="comp_img">
               <img className="comp" src={logo2} />
               <br />
               <div className="my_comp">My own company</div>
             </div>
-          </label>
+          
           <div className="hire_det1">
             I’m an owner/employee of a business or a company/enterprise.
           </div>
+          </label>
         </div>
         <div className="hir_box2">
           <input
@@ -53,21 +63,23 @@ function Hiring({ setPage, formData, setFormData }) {
             value="client"
             id="option-2"
             checked={status === 2}
-            onClick={(e) => radioHandler(2)}
+            onChange={(e) => radioHandler(2)}
           />
-          <label for="option-2">
+          <label htmlFor="option-2" onClick={(e) => radioHandler(2)}>
+            
             <div className="client_img">
               <img className="client" src={logo3} />
               <br />
               <div className="my_client">My clients</div>
             </div>
-          </label>
+          
           <div className="hire_det2">
             I’m a consultant working for staffing or manpower consultancy
           </div>
+          </label>
         </div>
       </div>
-      {status == 1 && (
+      {status === 1 && (
         <div>
           <div className="your_comp_name">
             <b>Your company name</b>
@@ -113,7 +125,7 @@ function Hiring({ setPage, formData, setFormData }) {
         </div>
       )}
 
-      {status == 2 && (
+      {status === 2 && (
         <div>
           <div className="client_hire">
             <b>Clients you normally hire for</b>
@@ -183,6 +195,7 @@ function Hiring({ setPage, formData, setFormData }) {
           disabled={!formData.comp_name}
           onClick={() => {
             setPage((currPage) => currPage + 1);
+            
           }}
         >
           Submit
